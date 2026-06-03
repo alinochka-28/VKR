@@ -1,0 +1,11 @@
+vkbottle==4.4.3
+fastapi==0.115.0
+uvicorn==0.32.0
+sqlalchemy==2.0.36
+alembic==1.13.3
+asyncpg==0.30.0
+python-dotenv==1.0.1
+pillow==11.0.0
+matplotlib==3.9.2
+rapidfuzz==3.14.0
+numpy==2.1.3
