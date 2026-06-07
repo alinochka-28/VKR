@@ -609,7 +609,7 @@ def setup_handlers(bot: Bot):
             test_data.luria_timer_task.cancel()
 
         test_data.luria_timer_task = asyncio.create_task(
-            _luria_memorize_timer(message, bot, peer_id, seconds=60)
+            _luria_memorize_timer(message, bot, peer_id, seconds=5)
         )
 
         logger.info(f"Запущен тест Лурии для {peer_id}, таймер на 60 секунд")

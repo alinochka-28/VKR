@@ -23,6 +23,25 @@ services:
     networks:
       - cognitive_network
 
+  bot:
+    build: .
+    container_name: cognitive_bot
+    environment:
+      DB_URL: postgresql+asyncpg://bot:botpass@postgres:5432/cogdb
+      BOT_TOKEN: ${VK_TOKEN}
+      LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    restart: unless-stopped
+    networks:
+      - cognitive_network
+
 networks:
   cognitive_network:
     driver: bridge
